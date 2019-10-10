@@ -32,15 +32,23 @@ public class JavaDB {
                     String perinfo = Menu.ask("1. Add Personal Info\n2. Leave\nInput");
                     switch (perinfo) {
                         case "1":
-                            Sqlcrudaccount.getAccountAll();
+                            Sqlcrudpersonalinfo.insertPerInfo(accid);
                             break;
                         case "2":
-                            id = Menu.askId("IDAccount");
-                            Sqlcrudaccount.getAccountByID(id);
+                            Sqlcrudpersonalinfo.insertPerInfonull(accid);
+                            System.out.println("Leave the Personal info as blank");
                             break;
                         default:
                             System.out.println("Invalid");
                             break;
+                    }
+                    String asksub = Menu.ask("1. Add Course\n2. Leave\nInput");
+                    switch(asksub){
+                        case "1":
+                            Sqlcrudsubject.insertCourse(accid);
+                            break;
+                        case "2":
+                            Sqlcrudsubject.insertCoursenull(accid);
                     }
                     break;
                 case "2":
@@ -49,6 +57,7 @@ public class JavaDB {
                         String get = Menu.ask("1. Retrieve all\n2. Retrieve by id\nInput");
                         switch (get) {
                             case "1":
+                                String alltype = Menu.ask("1. Accounts\n2. Personal Info\n3. Course\nInput");//stops here
                                 Sqlcrudaccount.getAccountAll();
                                 unget = false;
                                 break;

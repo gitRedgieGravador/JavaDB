@@ -10,17 +10,14 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import static javadb.Sqlcrud.DB_URL;
-import static javadb.Sqlcrud.JDBC_DRIVER;
-import static javadb.Sqlcrud.PASS;
-import static javadb.Sqlcrud.USER;
+import static javadb.Sqlcrud.*;
 
 /**
  *
- * @author gravadorre_sd2023
+ * @author 2ndyrGroupC
  */
-public class Sqlcrudpersonalinfo {
-    public static void insertPerInfo(int accid) {
+public class Sqlcrudsubject {
+    public static void insertCourse(int accid) {
         Connection conn = null;
         Statement stmt = null;
         String firstname, lastname, age;
@@ -65,7 +62,7 @@ public class Sqlcrudpersonalinfo {
         System.out.println("=================== done! ===================");
     }
     
-    public static void insertPerInfonull(int accid) {
+    public static void insertCoursenull(int accid) {
         Connection conn = null;
         Statement stmt = null;
         String firstname, lastname, age;
@@ -110,7 +107,7 @@ public class Sqlcrudpersonalinfo {
         System.out.println("=================== done! ===================");
     }
 
-    public static void getPerInfoByID(String id) {
+    public static void getCourseByID(String id) {
         Connection conn = null;
         Statement stmt = null;
         try {
@@ -165,7 +162,7 @@ public class Sqlcrudpersonalinfo {
         System.out.println("=================== done! ===================");
     }
 
-    public static void updateAccountByID(String id) {
+    public static void updateCoursetByID(String id) {
         Connection conn = null;
         Statement stmt = null;
         try {
@@ -208,7 +205,7 @@ public class Sqlcrudpersonalinfo {
         System.out.println("=================== Account Updated! ===================");
     }
 
-    public static void deleteAccountByID(String id) {
+    public static void deleteCourseByID(String id) {
         Connection conn = null;
         Statement stmt = null;
         try {
@@ -248,7 +245,7 @@ public class Sqlcrudpersonalinfo {
         System.out.println("=================== Account Deleted! ===================");
     }
 
-    public static void getAccountAll() {
+    public static void getCourseAll() {
         Connection conn = null;
         Statement stmt = null;
         try {
